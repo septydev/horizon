@@ -1956,7 +1956,12 @@ impl Launcher {
                             .text_color(t.ink)
                             .child(name),
                     )
-                    .child(text(theme::CAPTION).text_color(t.muted).child(how)),
+                    .child(
+                        text(theme::CAPTION)
+                            .truncate()
+                            .text_color(t.muted)
+                            .child(how),
+                    ),
             )
             .on_click(cx.listener(|this, _: &ClickEvent, _, cx| {
                 this.account_menu = !this.account_menu;
